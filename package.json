@@ -1,6 +1,6 @@
 {
   "name": "bitcore-ecies-dash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ECIES implemented for Bitcore-Dash.",
   "main": "index.js",
   "directories": {
@@ -40,6 +40,6 @@
   },
   "dependencies": {
     "aes": "^0.1.0",
-    "bitcore-lib-dash": "0.13.16"
+    "bitcore-lib-dash": "^0.13.17"
   }
 }
