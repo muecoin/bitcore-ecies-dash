@@ -32,7 +32,7 @@
   "homepage": "https://github.com/dashpay/bitcore-ecies-dash",
   "devDependencies": {
     "assert": "^1.1.2",
-    "bitcore-build": "dashpay/bitcore-build-dash",
+    "bitcore-build-dash": "dashpay/bitcore-build-dash",
     "brfs": "^1.2.0",
     "browserify": "^8.1.0",
     "chai": "~1.10.0",
