@@ -3,13 +3,13 @@
 var ECIES = require('../');
 
 var should = require('chai').should();
-var bitcore = require('bitcore-lib-dash');
+var bitcore = require('bitcore-lib-mue');
 var PrivateKey = bitcore.PrivateKey;
 
 
 
-var aliceKey = new PrivateKey('XFKfS6jQ1ic2xonndSD2Rtvwb2GRE5XJG7q2ScBnRhSJQU5zXGD9');
-var bobKey = new PrivateKey('XHYLVEzU6S4SJHAw3qoBM4PJqNHyLLSrYM2edrcEAuzBUS55LjeA');
+var aliceKey = new PrivateKey('KkAfUvhooWCr3RQdaTHciTgsZV8iW6dWnJFxBffkDPfjuw2nBDTP');
+var bobKey = new PrivateKey('KfX3fc12RiEZPmfidiqknJZEgd22odMgfkxeCfYgcKHZxiMZVyi7');
 
 describe('ECIES', function() {
 
@@ -52,7 +52,7 @@ describe('ECIES', function() {
     .privateKey(bobKey)
     .publicKey(aliceKey.publicKey);
 
-  var message = 'attack at dawn';
+  var message = 'hello, to MonetaryUnit world';
   var encrypted = '0259e3da1349903aaaf3ff0d389e8086d669a9e7ae464be5b53131b590f872d96ceccc4c78c4b0b16e45f3982e4535acda1b63edfc4ebe81fd02539c4f7d720f4f206476303796e4b0d0ae247d117355fa661710dbce76d9b97ccf731040af60b1';
   var encBuf = new Buffer(encrypted, 'hex');
 

@@ -9,20 +9,20 @@ ECIES is implemented as a separate module and you must add it to your dependenci
 For node projects:
 
 ```bash
-npm install bitcore-ecies --save
+npm install bitcore-ecies-mue --save
 ```
 
 For client-side projects:
 
 ```bash
-bower install bitcore-ecies --save
+bower install bitcore-ecies-mue --save
 ```
 
 ## Example
 
 ```javascript
-var bitcore = require('bitcore-lib-dash');
-var ECIES = require('bitcore-ecies-dash');
+var bitcore = require('bitcore-lib-mue');
+var ECIES = require('bitcore-ecies-mue');
 
 var alicePrivateKey = new bitcore.PrivateKey();
 var bobPrivateKey = new bitcore.PrivateKey();

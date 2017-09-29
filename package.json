@@ -1,7 +1,7 @@
 {
-  "name": "bitcore-ecies-dash",
-  "version": "1.0.3",
-  "description": "ECIES implemented for Bitcore-Dash.",
+  "name": "bitcore-ecies-mue",
+  "version": "0.1.0",
+  "description": "ECIES implemented for Bitcore-MUE",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dashpay/bitcore-ecies-dash.git"
+    "url": "https://github.com/muecoin/bitcore-ecies-mue.git"
   },
   "keywords": [
     "bitcoin",
@@ -22,17 +22,20 @@
     "ecies",
     "crypto",
     "cryptography",
-    "encryption"
+    "encryption",
+    "monetaryunit",
+    "mue",
+    "dash"
   ],
   "author": "BitPay",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dashpay/bitcore-ecies-dash/issues"
+    "url": "https://github.com/muecoin/bitcore-ecies-mue/issues"
   },
-  "homepage": "https://github.com/dashpay/bitcore-ecies-dash",
+  "homepage": "https://github.com/muecoin/bitcore-ecies-mue",
   "devDependencies": {
     "assert": "^1.1.2",
-    "bitcore-build-dash": "dashpay/bitcore-build-dash",
+    "bitcore-build-mue": "latest",
     "brfs": "^1.2.0",
     "browserify": "^8.1.0",
     "chai": "~1.10.0",
@@ -40,6 +43,6 @@
   },
   "dependencies": {
     "aes": "^0.1.0",
-    "bitcore-lib-dash": "^0.13.18"
+    "bitcore-lib-mue": "latest"
   }
 }

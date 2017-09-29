@@ -1,6 +1,6 @@
 {
-  "name": "bitcore-ecies",
-  "main": "./bitcore-ecies.min.js",
+  "name": "bitcore-ecies-mue",
+  "main": "./bitcore-ecies-mue.min.js",
   "version": "1.0.3",
   "homepage": "https://github.com/bitpay/bitcore-ecies",
   "authors": [
@@ -15,7 +15,10 @@
     "bitcore",
     "btc",
     "satoshi",
-    "ecies"
+    "ecies",
+    "dash",
+    "monetaryunit",
+    "mue"
   ],
   "license": "MIT",
   "ignore": [

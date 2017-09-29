@@ -31,3 +31,6 @@ node_modules
 tests.js
 bitcore-ecies.js
 bitcore-ecies.min.js
+bitcore-ecies-mue.js
+bitcore-ecies-mue.min.js
+.idea/
