@@ -8,8 +8,8 @@ var PrivateKey = bitcore.PrivateKey;
 
 
 
-var aliceKey = new PrivateKey('KkAfUvhooWCr3RQdaTHciTgsZV8iW6dWnJFxBffkDPfjuw2nBDTP');
-var bobKey = new PrivateKey('KfX3fc12RiEZPmfidiqknJZEgd22odMgfkxeCfYgcKHZxiMZVyi7');
+var aliceKey = new PrivateKey('L1Ejc5dAigm5XrM3mNptMEsNnHzS7s51YxU7J61ewGshZTKkbmzJ');
+var bobKey = new PrivateKey('KxfxrUXSMjJQcb3JgnaaA6MqsrKQ1nBSxvhuigdKRyFiEm6BZDgG');
 
 describe('ECIES', function() {
 
@@ -52,8 +52,8 @@ describe('ECIES', function() {
     .privateKey(bobKey)
     .publicKey(aliceKey.publicKey);
 
-  var message = 'hello, to MonetaryUnit world';
-  var encrypted = '0259e3da1349903aaaf3ff0d389e8086d669a9e7ae464be5b53131b590f872d96ceccc4c78c4b0b16e45f3982e4535acda1b63edfc4ebe81fd02539c4f7d720f4f206476303796e4b0d0ae247d117355fa661710dbce76d9b97ccf731040af60b1';
+  var message = 'attack at dawn';
+  var encrypted = '0339e504d6492b082da96e11e8f039796b06cd4855c101e2492a6f10f3e056a9e712c732611c6917ab5c57a1926973bc44a1586e94a783f81d05ce72518d9b0a80e2e13c7ff7d1306583f9cc7a48def5b37fbf2d5f294f128472a6e9c78dede5f5';
   var encBuf = new Buffer(encrypted, 'hex');
 
   it('correctly encrypts a message', function() {
@@ -132,8 +132,9 @@ describe('ECIES', function() {
     }).should.throw('Invalid checksum');
   });
 
-    it('decrypting uncompressed keys', function() {
+  it('decrypting uncompressed keys', function() {
     var secret = 'test';
+
     // test uncompressed
     var alicePrivateKey = new bitcore.PrivateKey.fromObject({
       bn: '1fa76f9c799ca3a51e2c7c901d3ba8e24f6d870beccf8df56faf30120b38f360',
@@ -142,8 +143,10 @@ describe('ECIES', function() {
     });
     var alicePublicKey = new bitcore.PublicKey.fromPrivateKey(alicePrivateKey); // alicePrivateKey.publicKey
     alicePrivateKey.compressed.should.equal(false);
+
     var cypher1 = ECIES().privateKey(alicePrivateKey).publicKey(alicePublicKey);
     var encrypted = cypher1.encrypt(secret);
+
     var cypher2 = ECIES().privateKey(alicePrivateKey).publicKey(alicePublicKey);
     var decrypted = cypher2.decrypt(encrypted);
     secret.should.equal(decrypted.toString());
@@ -151,6 +154,7 @@ describe('ECIES', function() {
   
   it('decrypting compressed keys', function() {
     var secret = 'test';
+
     // test compressed
     var alicePrivateKey = new bitcore.PrivateKey.fromObject({
       bn: '1fa76f9c799ca3a51e2c7c901d3ba8e24f6d870beccf8df56faf30120b38f360',
@@ -159,11 +163,12 @@ describe('ECIES', function() {
     });
     var alicePublicKey = new bitcore.PublicKey.fromPrivateKey(alicePrivateKey); // alicePrivateKey.publicKey
     alicePrivateKey.compressed.should.equal(true);
+
     var cypher1 = ECIES().privateKey(alicePrivateKey).publicKey(alicePublicKey);
     var encrypted = cypher1.encrypt(secret);
+
     var cypher2 = ECIES().privateKey(alicePrivateKey).publicKey(alicePublicKey);
     var decrypted = cypher2.decrypt(encrypted);
     secret.should.equal(decrypted.toString());
   });
-
 });
